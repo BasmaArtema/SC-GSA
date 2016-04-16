@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>St. Clair GSA</title>
+    <script src="/js/libs/jquery-2.1.4.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.css">
@@ -13,54 +14,53 @@
     <link rel="stylesheet" type="text/css" href="/css/flat.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+
 </head>
 <body>
 
-    <header>
-        <div class="topTitle">
-            <img src="/img/newlogo.png" alt="GSA Logo" class="midAlign" />
-            <a href="/">St Clair College's Gay-Straight Alliance</a>
-        </div>
+
+<header>
+    <div class="topTitle">
+        <img src="/img/newlogo.png" alt="GSA Logo" class="midAlign"/>
+        <a href="/">St Clair College's Gay-Straight Alliance</a>
+    </div>
 
 
     <nav>
         <div id='cssmenu'>
-          <ul>
-              <li class='active'><a href='/'><span>Home</span></a></li>
-              <li><a href='/about'><span>About Us</span></a></li>
-              <li><a href='/contact'><span>Contact US</span></a></li>
-              <li><a href='/events'><span>Events</span></a></li>
-              <li><a href='/blog'><span>Blog</span></a></li>
-              <li class="last"><a href='/external-resources'><span>External Resources</span></a></li>
-          </ul>
+            <ul>
+                <li class='active'><a href='/'><span>Home</span></a></li>
+                <li><a href='/about'><span>About Us</span></a></li>
+                <li><a href='/contact'><span>Contact US</span></a></li>
+                <li><a href='/blog'><span>Blog</span></a></li>
+                <li class="last"><a href='/external-resources'><span>External Resources</span></a></li>
+            </ul>
         </div>
     </nav>
-    </header>
+</header>
 <div class="wrap">
     <div class="container">
 
-    {{{body}}}
+        {{{body}}}
 
 
-    <a href="#0" class="cd-top">Top</a>
+        <a href="#0" class="cd-top">Top</a>
 
-        </div>
+    </div>
 
     <footer>
 
         <div class="icons pull-left" style="margin: .25% 0 0 1%">
-            <a href="http://www.facebook.com/StClairCollegeGSA/" target="_blank"><i class="fa fa-facebook-official fa-2x"></i></a>
+            <a href="http://www.facebook.com/StClairCollegeGSA/" target="_blank"><i
+                    class="fa fa-facebook-official fa-2x"></i></a>
             <a href="#"><i class="fa fa-youtube-square fa-2x"></i></a>
-            <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="https://twitter.com/sccgsa"><i class="fa fa-twitter-square fa-2x"></i></a>
         </div>
-
-
 
 
         <div id="innerFoot">
             <a href="/about">About Us</a> &bull;
             <a href="/contact">Contact Us</a> &bull;
-            <a href="/events">Events</a> &bull;
             <a href="/blog">Blog</a> &bull;
             <a href="/external-resources">External Resources</a>
         </div>
@@ -80,14 +80,41 @@
 
     </footer>
 
-    </div>
-    <script src="/js/libs/jquery-2.1.4.min.js"></script>
-    <script src="/js/libs/medium-editor.js"></script>
-    <script>var editor = new MediumEditor('.editable');</script>
-    <script src="/js/libs/menuscript.js"></script>
-    <script src="/js/blog-new.js"></script>
-    <script src="/js/back-to-top.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</div>
 
+<script src="/js/libs/medium-editor.js"></script>
+<script>var editor = new MediumEditor('.editable');</script>
+<script src="/js/libs/menuscript.js"></script>
+<script src="/js/blog-new.js"></script>
+<script src="/js/back-to-top.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script>
+    function closeAccord(item){
+        $(item).collapse("hide");
+    }
+    function validateCheckbox() {
+        if ($('#checkbox1').is(':checked')) {
+
+            $('#name').removeAttr('required');
+        }
+        else {
+
+            $('#name').attr('required');
+            $('#name').prop('required', true);
+        }
+
+    }
+
+    function validate() {
+        if ($('#checkbox1').is(':checked')) {
+            $('#name').removeAttr('required');
+        }
+        else {
+            $('#name').prop('required', true);
+            $('#form').validate();
+        }
+    }
+</script>
 </body>
 </html>

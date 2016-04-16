@@ -3,7 +3,9 @@ body {
 
 html, body {
   height: 100%; }
-
+.checkbox{
+  float:right;
+}
 .wrap {
   padding-bottom: 100px;
   min-height: 100%;
