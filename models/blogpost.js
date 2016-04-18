@@ -34,6 +34,16 @@ module.exports = function(sequelize, Datatypes) {
                     msg: "Content required"
                 }
             }
+        },
+        post_date: {
+            type: Datatypes.DATE,
+            allowNull: false,
+            validate: {
+                notEmpty: {
+                    args: true,
+                    msg: "Date required"
+                }
+            }
         }
     });
 

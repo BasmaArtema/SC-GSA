@@ -1,7 +1,7 @@
 // load google oauth
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var configAuth = require('./config.json')[process.env.NODE_ENV];
-console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+//console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
 module.exports = function(passport) {
 

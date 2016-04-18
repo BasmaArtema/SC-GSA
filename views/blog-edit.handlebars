@@ -1,24 +1,28 @@
 <div class="row text-center">
     <div class="col-md-6 col-md-offset-3">
-        <h1>Create a new blog post</h1>
+        <h1>Edit this blog post</h1>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
 
-        <form role="form" name="newBlogPost" id="newBlogPost">
+        <form role="form" name="editBlogPost" id="editBlogPost">
+            <input type="hidden" id="oldId" value="{{post.post_id}}">
+            <input type="hidden" id="oldContent" value="{{post.content}}">
+
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" class="form-control" name="title" id="title">
+                <input type="text" class="form-control" name="title" id="title" value="{{post.title}}">
             </div>
 
             <div class="form-group">
                 <label for="editable">Content:</label>
                 <div class="editable form-control" id="editable">
+                    {{clean post.content}}
                 </div>
 
-                <input  id="content" name="content">
+                <input type="hidden" id="content">
             </div>
 
             <button type="submit">Save</button>

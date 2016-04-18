@@ -6,9 +6,9 @@ var isloggedin = require('./../utils/isloggedin');
 /* GET /admin */
 router.get('/', isloggedin.isloggedin, function(req, res) {
     //console.log('req.user ', req.user);
-    res.render('admin', {
-        isAdmin: req.isAuthenticated()
-    });
+    //res.render('admin', {
+    //    isAdmin: req.isAuthenticated()
+    //});
 });
 
 /**

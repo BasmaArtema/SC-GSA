@@ -1,3 +1,18 @@
+/*$mainColor: #443266;
+$secColor: #C3C3E5;
+$bodyBG: #F1F0FF;
+$linkCol: #8C489F;
+
+$mainColor: #0058ba; blue
+$secColor: #ffb1f0; pink
+$bodyBG: #F1F0FF;
+$linkCol: #8C489F; purple
+*/
+/*#0058ba
+#ffb1f0
+#ff75cf
+#7defff
+#edcdff*/
 body {
   background-color: #F1F0FF; }
 
@@ -13,37 +28,59 @@ html, body {
   overflow: auto; }
 
 .darkBorder {
-  border: solid #443266 1px; }
+  border: solid #443266 1px;
+  border-radius: 0; }
+
+.panel-group .panel {
+  border-radius: 0; }
+
+.form-control {
+  border-radius: 0; }
 
 button {
   background-color: #443266;
   color: #F1F0FF;
   border: solid 1px #C3C3E5;
-  border-radius: 25px;
-  padding: 15px 32px;
+  border-radius: 0;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  font-weight: bold; }
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 1; }
+  button:hover {
+    background-color: #564675; }
+  button:active {
+    background-color: #9990AC; }
+
+.btn-default {
+  border-radius: 0; }
+
+.pagination-sm > li:first-child > a, .pagination-sm > li:last-child > a {
+  border-radius: 0; }
+
+.pagination-sm > li:active > a:hover {
+  background-color: transparent; }
 
 .special {
   margin: 2% 0 2%;
   padding: 2%;
-  background-color: #8C489F;
-  color: #C3C3E5;
-  border-radius: 25px;
+  background-color: #C3C3E5;
+  color: black;
+  /*border-radius: 25px;*/
   /* visited link */
   /* mouse over link */
   /* selected link */ }
   .special a:link, .special a:visited, .special a:hover, .special a:active {
-    color: #F1F0FF;
-    font-weight: bold; }
+    color: #443266;
+    font-weight: bold;
+    text-decoration: underline; }
   .special a:visited {
-    color: #F1F0FF;
+    color: #443266;
     font-weight: bold; }
   .special a:hover {
-    color: #F1F0FF;
+    color: black;
     font-weight: bold; }
   .special a:active {
     color: #F1F0FF;
@@ -52,6 +89,12 @@ button {
 img {
   max-width: 100%;
   height: auto; }
+  img.full-width {
+    width: 100%; }
+
+/* for election guidelines under /about other documents */
+p.docHeading {
+  text-decoration: underline; }
 
 header {
   background-color: #443266;
@@ -68,13 +111,17 @@ header {
     font-weight: bold; }
   header a:hover {
     color: #F1F0FF;
-    font-weight: bold; }
+    font-weight: bold;
+    text-decoration: none; }
   header a:active {
     color: #F1F0FF;
     font-weight: bold; }
 
 img.midAlign {
-  vertical-align: middle; }
+  vertical-align: middle;
+  width: 300px;
+  margin-top: 30px;
+  margin-right: 30px; }
 
 .center {
   text-align: center; }
@@ -86,6 +133,16 @@ img.midAlign {
 
 header {
   width: 100%; }
+
+h1 {
+  margin-bottom: 20px; }
+
+.pagination > li > a {
+  color: #8C489F; }
+
+.pagination > .active > a {
+  background-color: #8C489F;
+  border-color: #8C489F; }
 
 footer {
   background-color: #C3C3E5;
@@ -117,15 +174,27 @@ footer {
     color: #F1F0FF;
     font-weight: bold; }
 
+#innerFoot + span {
+  clear: both; }
+  #innerFoot + span.pull-left {
+    margin: 5px 0 0 10px; }
+
+a.close {
+  font-size: 14px; }
+
+footer span.pull-right {
+  margin: 5px 10px 0 0; }
+
 nav {
   margin-left: 35%; }
 
 .quotes {
   margin: 2% 0 2%;
   background-color: #C3C3E5;
-  border-radius: 25px;
+  /*border-radius: 25px;*/
   padding: 5%;
-  border: solid 1px #8C489F; }
+  border: solid 1px #8C489F;
+  font-style: italic; }
 
 .icons {
   /* unvisited link */
@@ -145,6 +214,9 @@ nav {
     color: #F1F0FF;
     font-weight: bold; }
 
+.blog-bg {
+  background-color: #F1F0FF; }
+
 /* unvisited link */
 a:link, a:visited, a:hover, a:active {
   color: #8C489F;
@@ -158,7 +230,7 @@ a:link, a:visited, a:hover, a:active {
   height: 40px;
   width: 40px;
   position: fixed;
-  bottom: 40px;
+  bottom: 70px;
   right: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   /* image replacement properties */
@@ -170,35 +242,49 @@ a:link, a:visited, a:hover, a:active {
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
   -moz-transition: opacity .3s 0s, visibility 0s .3s;
-  transition: opacity .3s 0s, visibility 0s .3s; }
+  transition: opacity .3s 0s, visibility 0s .3s;
+  z-index: 1; }
 
 .cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
   -webkit-transition: opacity .3s 0s, visibility 0s 0s;
   -moz-transition: opacity .3s 0s, visibility 0s 0s;
-  transition: opacity .3s 0s, visibility 0s 0s; }
+  transition: opacity .3s 0s, visibility 0s 0s;
+  z-index: 1; }
 
 .cd-top.cd-is-visible {
   /* the button becomes visible */
   visibility: visible;
-  opacity: 1; }
+  opacity: 1;
+  z-index: 1; }
 
 .cd-top.cd-fade-out {
   /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-  opacity: .5; }
+  opacity: .5;
+  z-index: 1; }
 
 .no-touch .cd-top:hover {
-  background-color: #443266;
-  opacity: 1; }
+  background-color: #8C489F;
+  opacity: 1;
+  z-index: 1; }
 
 @media only screen and (min-width: 768px) {
   .cd-top {
     right: 20px;
-    bottom: 20px; } }
+    bottom: 70px;
+    z-index: 1; } }
 @media only screen and (min-width: 1024px) {
   .cd-top {
     height: 60px;
     width: 60px;
     right: 30px;
-    bottom: 30px; } }
+    bottom: 80px;
+    z-index: 1; } }
+/* RESPONSIVE TITLE STYLES */
+@media (max-width: 990px) {
+  .topTitle {
+    font-size: 2.3em; } }
+@media (max-width: 400px) {
+  .topTitle img.midAlign {
+    width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */

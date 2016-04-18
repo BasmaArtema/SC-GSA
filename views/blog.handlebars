@@ -1,17 +1,43 @@
 <script src="/js/libs/medium-editor.js"></script>
 <div class="row text-center">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-2">
         <h1>Blog</h1>
+        {{#if isAdmin}}
+            <a href="/blog/new" class="pull-left btn btn-default">New Blog Post</a>
+        {{/if}}
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+
 
         {{#each posts}}
+        <div class="col-md-8 col-md-offset-2">
             <h2>{{{link dataValues.post_id '/blog/' dataValues.title}}}</h2>
-            <div>{{{dataValues.content}}}</div>
+            <div class="postDiv" data-id="{{dataValues.post_id}}">
+                <p>{{{dateFormat dataValues.post_date}}}</p>
+                {{{truncatePost dataValues.content dataValues.post_id}}}
+            </div>
+        </div>
         {{/each}}
 
+    <div class="col-md-8 col-md-offset-2 text-center">
+        <ul class="pagination pagination-sm">
+            {{#paginate pagination type="first"}}
+                <li {{#if disabled}}class="disabled"{{/if}}><a href="?p={{n}}">First</a></li>
+            {{/paginate}}
+            {{#paginate pagination type="previous"}}
+                <li {{#if disabled}}class="disabled"{{/if}}><a href="?p={{n}}">Prev</a></li>
+            {{/paginate}}
+            {{#paginate pagination type="middle" limit="7"}}
+                <li {{#if active}}class="active"{{/if}}><a href="?p={{n}}">{{n}}</a></li>
+            {{/paginate}}
+            {{#paginate pagination type="next"}}
+                <li {{#if disabled}}class="disabled"{{/if}}><a href="?p={{n}}">Next</a></li>
+            {{/paginate}}
+            {{#paginate pagination type="last"}}
+                <li {{#if disabled}}class="disabled"{{/if}}><a href="?p={{n}}">Last</a></li>
+            {{/paginate}}
+        </ul>
     </div>
 </div>

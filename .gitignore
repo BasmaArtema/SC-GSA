@@ -1,6 +1,6 @@
 node_modules/
 .DS_Store
-
+.idea/**
 /config/config.json
 .idea/
 .idea/.name
@@ -17,5 +17,7 @@ node_modules/
 Procfile
 .idea/deployment.xml
 .idea/scopes/
+npm-debug.log
+
 
 
