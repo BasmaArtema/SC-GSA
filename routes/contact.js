@@ -34,8 +34,8 @@ router.post('/', function(req, res, next) {
     var senderName = req.body.name || 'Anonymous';
     var message = "<p>Name: "+senderName+"</p><p>Email: "+req.body.email+"</p>"+"<p>Message: "+req.body.message+"</p>";
     var mailOptions = {
-        from: 'scgsa.contact.form@gmail.com',
-        to: 'meghan.tara@gmail.com',
+        from: 'scgsacontact@gmail.com',
+        to: 'scgsa.test@gmail.com',
         subject: 'Message From SCGSA Contact Form',
         html: message
     };

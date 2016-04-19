@@ -18,7 +18,9 @@ body {
 
 html, body {
   height: 100%; }
-
+.checkbox{
+  float:right;
+}
 .wrap {
   padding-bottom: 100px;
   min-height: 100%;
@@ -26,26 +28,47 @@ html, body {
   overflow: auto; }
 
 .darkBorder {
-  border: solid #443266 1px; }
+  border: solid #443266 1px;
+  border-radius: 0; }
+
+.panel-group .panel {
+  border-radius: 0; }
+
+.form-control {
+  border-radius: 0; }
 
 button {
   background-color: #443266;
   color: #F1F0FF;
   border: solid 1px #C3C3E5;
-  border-radius: 25px;
-  padding: 15px 32px;
+  border-radius: 0;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  font-weight: bold; }
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 1; }
+  button:hover {
+    background-color: #564675; }
+  button:active {
+    background-color: #9990AC; }
+
+.btn-default {
+  border-radius: 0; }
+
+.pagination-sm > li:first-child > a, .pagination-sm > li:last-child > a {
+  border-radius: 0; }
+
+.pagination-sm > li:active > a:hover {
+  background-color: transparent; }
 
 .special {
   margin: 2% 0 2%;
   padding: 2%;
   background-color: #C3C3E5;
   color: black;
-  border-radius: 25px;
+  /*border-radius: 25px;*/
   /* visited link */
   /* mouse over link */
   /* selected link */ }
@@ -66,6 +89,12 @@ button {
 img {
   max-width: 100%;
   height: auto; }
+  img.full-width {
+    width: 100%; }
+
+/* for election guidelines under /about other documents */
+p.docHeading {
+  text-decoration: underline; }
 
 header {
   background-color: #443266;
@@ -89,7 +118,10 @@ header {
     font-weight: bold; }
 
 img.midAlign {
-  vertical-align: middle; }
+  vertical-align: middle;
+  width: 300px;
+  margin-top: 30px;
+  margin-right: 30px; }
 
 .center {
   text-align: center; }
@@ -142,15 +174,27 @@ footer {
     color: #F1F0FF;
     font-weight: bold; }
 
+#innerFoot + span {
+  clear: both; }
+  #innerFoot + span.pull-left {
+    margin: 5px 0 0 10px; }
+
+a.close {
+  font-size: 14px; }
+
+footer span.pull-right {
+  margin: 5px 10px 0 0; }
+
 nav {
   margin-left: 35%; }
 
 .quotes {
   margin: 2% 0 2%;
   background-color: #C3C3E5;
-  border-radius: 25px;
+  /*border-radius: 25px;*/
   padding: 5%;
-  border: solid 1px #8C489F; }
+  border: solid 1px #8C489F;
+  font-style: italic; }
 
 .icons {
   /* unvisited link */
@@ -235,5 +279,12 @@ a:link, a:visited, a:hover, a:active {
     right: 30px;
     bottom: 80px;
     z-index: 1; } }
+/* RESPONSIVE TITLE STYLES */
+@media (max-width: 990px) {
+  .topTitle {
+    font-size: 2.3em; } }
+@media (max-width: 400px) {
+  .topTitle img.midAlign {
+    width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */

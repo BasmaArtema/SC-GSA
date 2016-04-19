@@ -19,9 +19,9 @@ function paginate(pagination) {
 }
 
 function truncatePost(content, id) {
-    if (content.length > 300) {
+    if (content.length > 400) {
         var link = new Handlebars.SafeString("<a href='"+"/blog/"+id+"'>read more</a>.");
-        return content.substring(0, 299)+"... "+link;
+        return content.substring(0, 399)+"... "+link;
     } else {
         return content;
     }

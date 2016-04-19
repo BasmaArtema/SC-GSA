@@ -1,10 +1,10 @@
 <script src="/js/libs/medium-editor.js"></script>
 <div class="row text-center">
-    <div class="col-md-6 col-md-offset-3">
-        {{#if isAdmin}}
-            <a href="/blog/new" class="btn btn-default pull-right">New Blog Post</a>
-        {{/if}}
+    <div class="col-md-8 col-md-offset-2">
         <h1>Blog</h1>
+        {{#if isAdmin}}
+            <a href="/blog/new" class="pull-left btn btn-default">New Blog Post</a>
+        {{/if}}
     </div>
 </div>
 
@@ -15,7 +15,7 @@
         <div class="col-md-8 col-md-offset-2">
             <h2>{{{link dataValues.post_id '/blog/' dataValues.title}}}</h2>
             <div class="postDiv" data-id="{{dataValues.post_id}}">
-                <p>{{{dateFormat post.post_date}}}</p>
+                <p>{{{dateFormat dataValues.post_date}}}</p>
                 {{{truncatePost dataValues.content dataValues.post_id}}}
             </div>
         </div>
